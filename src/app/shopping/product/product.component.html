@@ -1,0 +1,27 @@
+<p>product works!</p>
+
+
+<div class="container">
+    <div *ngFor="let product of products" class="row">
+        <div style="border: 1em solid black">
+
+            <div class="row">
+                <div *ngFor="let img of product.images" class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img
+                    [src]="img"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Boat on Calm Water"
+                  />
+                </div>
+              
+            </div>
+
+
+            <h1><a [routerLink]="['/products',product.id]">{{product.title}}</a></h1>
+            <p>{{product.description}}</p>
+            <h3>{{product.price | currency}}</h3>
+            <h5>Rating: {{product.rating}}</h5>
+
+        </div>
+    </div>
+</div>
